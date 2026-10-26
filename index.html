@@ -3,236 +3,188 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rami Benabdelkrim — Economics of the Circular Economy</title>
+  <title>Rami Benabdelkrim — Economist</title>
   <meta name="description" content="Rami Benabdelkrim, Economist at ADEME and Associate Researcher at the Governance and Regulation Chair, Paris Dauphine–PSL. Research on Extended Producer Responsibility and Producer Responsibility Organizations.">
-  <meta property="og:title" content="Rami Benabdelkrim — Economics of the Circular Economy">
+  <meta property="og:title" content="Rami Benabdelkrim — Economist">
   <meta property="og:description" content="Governance and regulation of the circular economy: Extended Producer Responsibility (EPR) and Producer Responsibility Organizations (PROs).">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#123a2f">
+  <meta name="theme-color" content="#1b2433">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ink: #14211c;
-      --muted: #5b6b64;
-      --line: #dfe5df;
-      --paper: #f7f6f1;
-      --card: #ffffff;
-      --brand: #123a2f;      /* vert profond */
-      --brand-soft: #e3ece6;
-      --accent: #c8792b;     /* touche cuivrée */
-      --serif: "Newsreader", Georgia, serif;
-      --sans: "Inter", system-ui, -apple-system, sans-serif;
+      --ink: #1c1c1c;
+      --muted: #6b6760;
+      --rule: #d9d4ca;
+      --paper: #fbfaf7;
+      --navy: #1b2433;
+      --gold: #9c7f52;
+      --display: "Cormorant Garamond", Garamond, Georgia, serif;
+      --text: "EB Garamond", Garamond, Georgia, serif;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: var(--sans);
-      font-size: 17px;
+      font-family: var(--text);
+      font-size: 19px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--brand); text-underline-offset: 3px; }
-    a:hover { color: var(--accent); }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--gold); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
 
     .skip { position: absolute; left: -999px; }
     .skip:focus { left: 16px; top: 16px; background: #fff; padding: 8px 12px; z-index: 100; }
 
-    /* ---------- Barre de navigation ---------- */
-    header.nav {
+    /* Petites capitales espacées, utilisées pour les libellés */
+    .caps {
+      font-family: var(--text);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ---------- Barre du haut ---------- */
+    header.top {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(247, 246, 241, 0.9);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+      background: rgba(251, 250, 247, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
     }
-    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo {
-      font-family: var(--serif); font-size: 24px; font-weight: 600;
-      color: var(--brand); text-decoration: none; letter-spacing: -0.02em;
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .wordmark {
+      font-family: var(--display); font-size: 22px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); text-decoration: none;
     }
-    .logo span { color: var(--accent); }
-    .nav nav { display: flex; gap: 28px; }
-    .nav nav a {
-      font-size: 14px; font-weight: 500; color: var(--ink);
-      text-decoration: none; letter-spacing: 0.01em;
-    }
-    .nav nav a:hover { color: var(--accent); }
+    .top nav { display: flex; gap: 40px; }
+    .top nav a { color: var(--ink); text-decoration: none; }
+    .top nav a:hover { color: var(--gold); }
 
-    /* ---------- En-tête (hero) ---------- */
-    .hero { padding: 88px 0 72px; }
-    .hero .wrap {
-      display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center;
+    /* ---------- En-tête ---------- */
+    .intro { padding: 120px 0 110px; }
+    .intro .wrap { display: flex; gap: 80px; align-items: flex-end; }
+    .intro .text { flex: 1; }
+    .intro h1 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(52px, 8vw, 92px); line-height: 1;
+      letter-spacing: -0.01em; color: var(--navy); margin: 0;
     }
-    .eyebrow {
-      font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--accent); margin: 0 0 18px;
-    }
-    .hero h1 {
-      font-family: var(--serif); font-weight: 500;
-      font-size: clamp(44px, 7vw, 76px); line-height: 1.02;
-      letter-spacing: -0.03em; margin: 0 0 24px; color: var(--brand);
-    }
-    .roles { list-style: none; padding: 0; margin: 0 0 36px; }
-    .roles li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 16px; }
-    .roles li:last-child { border-bottom: 1px solid var(--line); }
-    .roles strong { font-weight: 600; }
-    .roles .org { color: var(--muted); display: block; font-size: 15px; }
+    .intro .rule { width: 72px; height: 1px; background: var(--gold); margin: 40px 0 32px; }
+    .intro .position { margin: 0 0 6px; font-size: 21px; }
+    .intro .position em { color: var(--muted); }
+    .intro .links { margin-top: 44px; display: flex; gap: 36px; flex-wrap: wrap; }
+    .intro .links a { text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; color: var(--navy); }
+    .intro .links a:hover { color: var(--gold); }
 
-    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 22px; border-radius: 999px;
-      font-size: 15px; font-weight: 500; text-decoration: none;
-      border: 1px solid var(--brand); transition: all .2s ease;
+    .photo { width: 300px; flex-shrink: 0; margin: 0; }
+    .photo img {
+      width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block;
+      filter: grayscale(100%) contrast(1.05);
+      border: 1px solid var(--rule);
     }
-    .btn.primary { background: var(--brand); color: #fff; }
-    .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .btn.ghost { color: var(--brand); }
-    .btn.ghost:hover { background: var(--brand); color: #fff; }
-
-    .portrait { position: relative; }
-    .portrait .frame {
-      aspect-ratio: 4 / 5; border-radius: 6px; overflow: hidden;
-      background: var(--brand); position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
-    .portrait .initials {
-      position: absolute; font-family: var(--serif); font-size: 96px;
-      color: rgba(255,255,255,0.85); letter-spacing: -0.04em;
-    }
-    .portrait::after {
-      content: ""; position: absolute; inset: 18px -18px -18px 18px;
-      border: 1px solid var(--accent); border-radius: 6px; z-index: -1;
-    }
-    .portrait figcaption { margin-top: 30px; font-size: 14px; color: var(--muted); line-height: 1.5; }
-    .portrait figcaption strong { color: var(--ink); font-weight: 600; display: block; }
 
     /* ---------- Sections ---------- */
-    section.block { padding: 88px 0; border-top: 1px solid var(--line); }
-    .section-label {
-      font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
-    }
-    .section-label b { color: var(--accent); font-weight: 600; }
+    section.part { border-top: 1px solid var(--rule); padding: 96px 0; }
+    .part .wrap { display: grid; grid-template-columns: 240px 1fr; gap: 64px; }
+    .part .side { color: var(--gold); padding-top: 12px; }
     h2 {
-      font-family: var(--serif); font-weight: 500;
-      font-size: clamp(32px, 4.5vw, 46px); line-height: 1.1;
-      letter-spacing: -0.02em; color: var(--brand); margin: 0 0 40px;
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(34px, 4.5vw, 46px); line-height: 1.15;
+      color: var(--navy); margin: 0 0 36px;
     }
-    .cols { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; }
-    .lead {
-      font-family: var(--serif); font-size: 24px; line-height: 1.45;
-      color: var(--brand); margin: 0;
-    }
-    .prose p { margin: 0 0 20px; }
-    .prose p:last-child { margin-bottom: 0; }
-
-    .tags { list-style: none; padding: 0; margin: 32px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
-    .tags li {
-      background: var(--brand-soft); color: var(--brand);
-      font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 999px;
+    .body p { margin: 0 0 22px; }
+    .body p:last-child { margin-bottom: 0; }
+    .body .opening::first-letter {
+      font-family: var(--display); float: left;
+      font-size: 82px; line-height: 0.82; padding: 6px 12px 0 0; color: var(--navy);
     }
 
-    /* ---------- Carte thèse ---------- */
-    .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 8px;
-      padding: 40px; display: grid; grid-template-columns: 64px 1fr; gap: 24px;
-    }
-    .card .num { font-family: var(--serif); font-size: 40px; color: var(--accent); line-height: 1; }
-    .badge {
-      display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--brand); background: var(--brand-soft);
-      padding: 4px 10px; border-radius: 4px; margin-bottom: 14px;
-    }
-    .card h3 {
-      font-family: var(--serif); font-weight: 500; font-size: 28px;
-      line-height: 1.25; margin: 0 0 8px; color: var(--ink);
-    }
-    .card .meta { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
-    .card p { margin: 0 0 16px; }
+    .fields { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--rule); color: var(--muted); font-style: italic; }
+    .fields span + span::before { content: " · "; color: var(--gold); font-style: normal; }
 
-    .chapters { list-style: none; padding: 0; margin: 24px 0; counter-reset: ch; }
+    /* ---------- Thèse ---------- */
+    .work h3 {
+      font-family: var(--display); font-weight: 500; font-size: 30px;
+      line-height: 1.25; margin: 0 0 10px; color: var(--ink);
+    }
+    .work .meta { color: var(--muted); font-style: italic; margin: 0 0 28px; }
+
+    .chapters { list-style: none; padding: 0; margin: 36px 0; }
     .chapters li {
-      counter-increment: ch; position: relative;
-      padding: 14px 0 14px 56px; border-top: 1px solid var(--line); font-size: 16px;
+      display: grid; grid-template-columns: 56px 1fr; gap: 8px;
+      padding: 18px 0; border-top: 1px solid var(--rule);
     }
-    .chapters li::before {
-      content: "Ch. " counter(ch, upper-roman);
-      position: absolute; left: 0; top: 14px;
-      font-size: 13px; font-weight: 600; color: var(--accent);
-    }
+    .chapters li:last-child { border-bottom: 1px solid var(--rule); }
+    .chapters .n { font-family: var(--display); font-size: 22px; color: var(--gold); line-height: 1.4; }
 
-    details { border-top: 1px solid var(--line); margin-top: 8px; }
+    details { margin: 8px 0 36px; }
     summary {
-      cursor: pointer; list-style: none; padding: 16px 0 4px;
-      font-weight: 600; font-size: 15px; color: var(--brand);
-      display: flex; justify-content: space-between;
+      cursor: pointer; list-style: none; display: inline-block;
+      color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 4px;
     }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-size: 20px; line-height: 1; transition: transform .2s; }
-    details[open] summary::after { transform: rotate(45deg); }
-    details .inner { padding-top: 12px; color: #2c3a34; }
+    summary .when-open { display: none; }
+    details[open] summary .when-open { display: inline; }
+    details[open] summary .when-closed { display: none; }
+    details .inner { margin-top: 28px; padding-left: 28px; border-left: 1px solid var(--gold); }
 
-    .card .btns { margin-top: 24px; }
+    .text-link { text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 
     /* ---------- Contact ---------- */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .mail-list { list-style: none; padding: 0; margin: 0; }
-    .mail-list li {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding: 18px 0; border-top: 1px solid var(--line);
+    .contact-list { list-style: none; padding: 0; margin: 0 0 48px; }
+    .contact-list li {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+      padding: 20px 0; border-top: 1px solid var(--rule); flex-wrap: wrap;
     }
-    .mail-list li:last-child { border-bottom: 1px solid var(--line); }
-    .mail-list .label { display: block; font-size: 13px; color: var(--muted); }
-    .mail-list a { font-family: var(--serif); font-size: 20px; text-decoration: none; word-break: break-all; }
+    .contact-list li:last-child { border-bottom: 1px solid var(--rule); }
+    .contact-list .who { color: var(--muted); }
+    .contact-list a { text-decoration: none; word-break: break-all; }
     .copy {
-      flex-shrink: 0; font: inherit; font-size: 13px; font-weight: 500;
-      background: none; border: 1px solid var(--line); border-radius: 999px;
-      padding: 6px 12px; cursor: pointer; color: var(--muted);
+      font: inherit; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      background: none; border: none; color: var(--gold); cursor: pointer; padding: 0; margin-left: 16px;
     }
-    .copy:hover { border-color: var(--brand); color: var(--brand); }
+    .copy:hover { color: var(--navy); }
 
-    .profiles { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
-    .profiles a {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 20px; background: var(--card); border: 1px solid var(--line);
-      border-radius: 8px; text-decoration: none; font-weight: 500; color: var(--ink);
-      transition: border-color .2s, transform .2s;
-    }
-    .profiles a:hover { border-color: var(--brand); transform: translateX(4px); color: var(--brand); }
-    .profiles a span { color: var(--accent); }
-
-    address { font-style: normal; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    address { font-style: normal; }
+    .profiles { list-style: none; padding: 0; margin: 0; }
+    .profiles li { margin-bottom: 6px; }
 
     /* ---------- Pied de page ---------- */
-    footer { background: var(--brand); color: rgba(255,255,255,0.75); padding: 32px 0; font-size: 14px; }
-    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    footer a { color: #fff; text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 44px 0; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
 
     /* ---------- Mobile ---------- */
-    @media (max-width: 820px) {
-      .nav nav { gap: 18px; }
-      .nav nav a.hide-sm { display: none; }
-      .hero { padding: 48px 0; }
-      .hero .wrap, .cols, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .portrait { max-width: 320px; }
-      section.block { padding: 64px 0; }
-      .card { grid-template-columns: 1fr; padding: 28px 22px; gap: 8px; }
+    @media (max-width: 860px) {
+      .top nav { gap: 22px; }
+      .intro { padding: 64px 0; }
+      .intro .wrap { flex-direction: column-reverse; align-items: flex-start; gap: 48px; }
+      .photo { width: 220px; }
+      section.part { padding: 64px 0; }
+      .part .wrap { grid-template-columns: 1fr; gap: 12px; }
+      .part .side { padding-top: 0; }
+      .two { grid-template-columns: 1fr; gap: 32px; }
     }
-    @media (max-width: 420px) {
-      .nav nav { gap: 14px; }
-      .nav nav a { font-size: 13px; }
+    @media (max-width: 480px) {
+      .wrap { padding: 0 20px; }
+      body { font-size: 18px; }
+      .wordmark { font-size: 16px; letter-spacing: 0.12em; }
+      .top nav { gap: 16px; }
+      .top nav a { font-size: 11px; letter-spacing: 0.14em; }
+      details .inner { padding-left: 18px; }
     }
   </style>
 </head>
@@ -240,13 +192,13 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- ========== MENU ========== -->
-  <header class="nav">
+  <header class="top">
     <div class="wrap">
-      <a class="logo" href="#home">RB<span>.</span></a>
+      <a class="wordmark" href="#home">Rami Benabdelkrim</a>
       <nav>
-        <a href="#about">About</a>
-        <a href="#dissertation">Dissertation</a>
-        <a href="#contact">Contact</a>
+        <a class="caps" href="#about">About</a>
+        <a class="caps" href="#dissertation">Research</a>
+        <a class="caps" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -254,142 +206,111 @@
   <main id="main">
 
     <!-- ========== EN-TÊTE ========== -->
-    <section class="hero">
+    <section class="intro">
       <div class="wrap">
-        <div>
-          <p class="eyebrow">Economics of the Circular Economy</p>
-          <h1>Rami<br>Benabdelkrim</h1>
-          <ul class="roles">
-            <li>
-              <strong>Economist</strong>
-              <span class="org">ADEME, France’s Ecological Transition Agency — Directorate for EPR Oversight (DSREP)</span>
-            </li>
-            <li>
-              <strong>Associate Researcher</strong>
-              <span class="org">Governance &amp; Regulation Chair, Université Paris Dauphine–PSL</span>
-            </li>
-          </ul>
-          <div class="btns">
-            <a class="btn primary" href="#about">Discover my research ↓</a>
-            <a class="btn ghost" href="https://theses.hal.science/tel-05180874v1" target="_blank" rel="noopener">Read my Ph.D. thesis ↗</a>
+        <div class="text">
+          <h1>Rami Benabdelkrim</h1>
+          <div class="rule"></div>
+          <p class="position">Economist, <em>ADEME — France’s Ecological Transition Agency</em></p>
+          <p class="position">Associate Researcher, <em>Governance &amp; Regulation Chair, Université Paris Dauphine–PSL</em></p>
+          <div class="links">
+            <a class="caps" href="#dissertation">Research</a>
+            <a class="caps" href="https://theses.hal.science/tel-05180874v1" target="_blank" rel="noopener">Ph.D. Thesis</a>
+            <a class="caps" href="#contact">Contact</a>
           </div>
         </div>
 
-        <figure class="portrait" style="margin:0">
-          <div class="frame">
-            <span class="initials">RB</span>
-            <!-- Ta photo : dépose un fichier nommé portrait.jpg dans le dépôt -->
-            <img src="portrait.jpg" alt="Portrait of Rami Benabdelkrim" onerror="this.remove()">
-          </div>
-          <figcaption>
-            <strong>Extended Producer Responsibility</strong>
-            Governance, regulation &amp; organizational design
-          </figcaption>
+        <!-- Ta photo : dépose un fichier nommé portrait.jpg dans le dépôt.
+             S'il n'y a pas de photo, ce bloc disparaît tout seul. -->
+        <figure class="photo">
+          <img src="portrait.jpg" alt="Portrait of Rami Benabdelkrim" onerror="this.parentNode.remove()">
         </figure>
       </div>
     </section>
 
-    <!-- ========== 01 / ABOUT ========== -->
-    <section class="block" id="about">
+    <!-- ========== ABOUT ========== -->
+    <section class="part" id="about">
       <div class="wrap">
-        <p class="section-label"><b>01</b> / About</p>
-        <h2>Institutions. Incentives. Circularity.</h2>
-        <div class="cols">
-          <p class="lead">How can collective institutional designs solve coordination and incentive problems in environmental policy?</p>
-          <div class="prose">
-            <p>I am an Economist at ADEME, within the Directorate for Extended Producer Responsibility Oversight, and an Associate Researcher at the Governance and Regulation Chair, Paris Dauphine–PSL University.</p>
-            <p>My research focuses on the governance and regulation of the circular economy, with a particular emphasis on Extended Producer Responsibility (EPR) and the organizational arrangements that support its implementation, especially through Producer Responsibility Organizations (PROs).</p>
-            <p>My work combines perspectives from organizational economics, public economics, and regulation to examine how collective institutional designs can address coordination and incentive problems in environmental policy. I rely on both conceptual analysis and quantitative methods, notably econometric approaches, to study how regulatory choices influence the performance of EPR systems.</p>
-            <p>Empirically, my research has focused on the waste electrical and electronic equipment (WEEE) and textile industries, but I remain interested in exploring other sectors facing similar challenges in organizing collective environmental responsibilities.</p>
-            <ul class="tags">
-              <li>Circular economy</li>
-              <li>Extended Producer Responsibility</li>
-              <li>PROs</li>
-              <li>Organizational economics</li>
-              <li>Regulation</li>
-              <li>Econometrics</li>
-              <li>WEEE &amp; textiles</li>
-            </ul>
-          </div>
+        <div class="side caps">About</div>
+        <div class="body">
+          <h2>The governance and regulation of the circular economy</h2>
+          <p class="opening">I am an Economist at ADEME, within the Directorate for Extended Producer Responsibility Oversight, and an Associate Researcher at the Governance and Regulation Chair, Paris Dauphine–PSL University.</p>
+          <p>My research focuses on the governance and regulation of the circular economy, with a particular emphasis on Extended Producer Responsibility (EPR) and the organizational arrangements that support its implementation, especially through Producer Responsibility Organizations (PROs).</p>
+          <p>My work combines perspectives from organizational economics, public economics, and regulation to examine how collective institutional designs can address coordination and incentive problems in environmental policy. I rely on both conceptual analysis and quantitative methods, notably econometric approaches, to study how regulatory choices influence the performance of EPR systems.</p>
+          <p>Empirically, my research has focused on the waste electrical and electronic equipment (WEEE) and textile industries, but I remain interested in exploring other sectors facing similar challenges in organizing collective environmental responsibilities.</p>
+          <p class="fields">
+            <span>Organizational economics</span><span>Public economics</span><span>Regulation</span><span>Econometrics</span>
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ========== 02 / DISSERTATION ========== -->
-    <section class="block" id="dissertation">
+    <!-- ========== THÈSE ========== -->
+    <section class="part" id="dissertation">
       <div class="wrap">
-        <p class="section-label"><b>02</b> / Ph.D. dissertation</p>
-        <h2>Organizing producer responsibility</h2>
+        <div class="side caps">Ph.D. Dissertation</div>
+        <div class="body work">
+          <h3>Producer Responsibility Organizations and the implementation of Extended Producer Responsibility in Europe</h3>
+          <p class="meta">Doctoral thesis, Université Paris Dauphine–PSL</p>
 
-        <article class="card">
-          <div class="num">01</div>
-          <div>
-            <span class="badge">Ph.D. dissertation</span>
-            <h3>Producer Responsibility Organizations as organizational instruments of EPR in Europe</h3>
-            <p class="meta">Université Paris Dauphine–PSL · Organizational economics</p>
+          <p>This dissertation analyzes Producer Responsibility Organizations (PROs) as central organizational instruments in the implementation of Extended Producer Responsibility (EPR) in Europe. It adopts an organizational economics perspective, drawing on incentive theory, institutional analysis, and industrial organization.</p>
 
-            <p>This dissertation analyzes Producer Responsibility Organizations (PROs) as central organizational instruments in the implementation of Extended Producer Responsibility (EPR) in Europe, drawing on incentive theory, institutional analysis, and industrial organization.</p>
+          <ol class="chapters">
+            <li><span class="n">I</span><span>Theoretical and empirical foundations of EPR — economic, political, and organizational issues, with a focus on the WEEE sector.</span></li>
+            <li><span class="n">II</span><span>How PRO design choices — ex ante financing, cost pooling, flat-rate fees — create an informational lock-in that neutralizes incentives for eco-design.</span></li>
+            <li><span class="n">III</span><span>A typology of PROs based on European data, revealing differentiated performance depending on the degree of organizational integration.</span></li>
+            <li><span class="n">IV</span><span>An industrial economics perspective on multi-product PROs and the inefficiencies linked to the heterogeneity of waste streams.</span></li>
+          </ol>
 
-            <ul class="chapters">
-              <li>Theoretical and empirical foundations: the economic, political, and organizational issues of EPR, with a focus on the WEEE sector.</li>
-              <li>PRO design choices (ex ante financing, cost pooling, flat-rate fees) create an informational lock-in that neutralizes incentives for eco-design.</li>
-              <li>A typology of PROs based on European data, showing differentiated performance depending on the degree of organizational integration.</li>
-              <li>The generalization of multi-product PROs leads to inefficiencies linked to the heterogeneity of waste streams.</li>
-            </ul>
-
-            <details>
-              <summary>Read the full abstract</summary>
-              <div class="inner">
-                <p>This dissertation analyzes Producer Responsibility Organizations (PROs) as central organizational instruments in the implementation of Extended Producer Responsibility (EPR) in Europe. EPR aims to internalize end-of-life externalities by transferring to producers the financial and sometimes operational responsibility for waste management. This transfer redefines the boundaries of responsibility and gives rise to new, often complex, organizational arrangements, of which PROs are the embodiment. The dissertation adopts an organizational economics perspective, drawing on incentive theory, institutional analysis, and industrial organization to understand how PROs structure their organizational choices in response to the institutional and operational constraints of EPR.</p>
-                <p>Chapter I lays the theoretical and empirical foundations, articulating the economic, political, and organizational issues related to EPR, with a focus on the WEEE sector. Chapter II shows that PRO design choices (ex ante financing, cost pooling, flat-rate fees) create an informational lock-in that neutralizes incentives for eco-design. Chapter III develops a typology of PROs based on European data and highlights differentiated performance depending on the degree of organizational integration. Chapter IV adopts an industrial economics perspective and shows that the generalization of multi-product PROs leads to inefficiencies linked to the heterogeneity of waste streams.</p>
-                <p>The dissertation concludes that PRO organizational choices are neither neutral nor secondary: they shape incentives, structure interactions among actors, and determine the overall performance of EPR systems. It calls for rethinking regulation by fully integrating the organizational and sectoral dimensions of EPR schemes.</p>
-              </div>
-            </details>
-
-            <div class="btns">
-              <a class="btn primary" href="https://theses.hal.science/tel-05180874v1" target="_blank" rel="noopener">Read on HAL theses ↗</a>
+          <details>
+            <summary class="caps"><span class="when-closed">Read the full abstract</span><span class="when-open">Close the abstract</span></summary>
+            <div class="inner">
+              <p>This dissertation analyzes Producer Responsibility Organizations (PROs) as central organizational instruments in the implementation of Extended Producer Responsibility (EPR) in Europe. EPR aims to internalize end-of-life externalities by transferring to producers the financial and sometimes operational responsibility for waste management. This transfer redefines the boundaries of responsibility and gives rise to new, often complex, organizational arrangements, of which PROs are the embodiment. The dissertation adopts an organizational economics perspective, drawing on incentive theory, institutional analysis, and industrial organization to understand how PROs structure their organizational choices in response to the institutional and operational constraints of EPR.</p>
+              <p>Chapter I lays the theoretical and empirical foundations, articulating the economic, political, and organizational issues related to EPR, with a focus on the WEEE sector. Chapter II shows that PRO design choices (ex ante financing, cost pooling, flat-rate fees) create an informational lock-in that neutralizes incentives for eco-design. Chapter III develops a typology of PROs based on European data and highlights differentiated performance depending on the degree of organizational integration. Chapter IV adopts an industrial economics perspective and shows that the generalization of multi-product PROs leads to inefficiencies linked to the heterogeneity of waste streams.</p>
+              <p>The dissertation concludes that PRO organizational choices are neither neutral nor secondary: they shape incentives, structure interactions among actors, and determine the overall performance of EPR systems. It calls for rethinking regulation by fully integrating the organizational and sectoral dimensions of EPR schemes.</p>
             </div>
-          </div>
-        </article>
+          </details>
+
+          <p><a class="text-link caps" href="https://theses.hal.science/tel-05180874v1" target="_blank" rel="noopener">Read the thesis on HAL</a></p>
+        </div>
       </div>
     </section>
 
-    <!-- ========== 03 / CONTACT ========== -->
-    <section class="block" id="contact">
+    <!-- ========== CONTACT ========== -->
+    <section class="part" id="contact">
       <div class="wrap">
-        <p class="section-label"><b>03</b> / Contact</p>
-        <h2>Get in touch</h2>
-        <div class="contact-grid">
-          <div>
-            <p class="prose" style="margin-top:0">To discuss my research, invite me to a seminar, or ask about EPR and PROs, feel free to reach out by email.</p>
-            <ul class="mail-list">
-              <li>
-                <div>
-                  <span class="label">ADEME</span>
-                  <a href="mailto:rami.benabdelkrim@ademe.fr">rami.benabdelkrim@ademe.fr</a>
-                </div>
+        <div class="side caps">Contact</div>
+        <div class="body">
+          <h2>Correspondence</h2>
+          <ul class="contact-list">
+            <li>
+              <span class="who">ADEME</span>
+              <span>
+                <a href="mailto:rami.benabdelkrim@ademe.fr">rami.benabdelkrim@ademe.fr</a>
                 <button class="copy" data-copy="rami.benabdelkrim@ademe.fr">Copy</button>
-              </li>
-              <li>
-                <div>
-                  <span class="label">Paris Dauphine–PSL</span>
-                  <a href="mailto:rami.ben-abdelkrim@dauphine.psl.eu">rami.ben-abdelkrim@dauphine.psl.eu</a>
-                </div>
+              </span>
+            </li>
+            <li>
+              <span class="who">Université Paris Dauphine–PSL</span>
+              <span>
+                <a href="mailto:rami.ben-abdelkrim@dauphine.psl.eu">rami.ben-abdelkrim@dauphine.psl.eu</a>
                 <button class="copy" data-copy="rami.ben-abdelkrim@dauphine.psl.eu">Copy</button>
-              </li>
-            </ul>
-          </div>
-          <div>
+              </span>
+            </li>
+          </ul>
+
+          <div class="two">
             <address>
               Governance &amp; Regulation Chair<br>
               Université Paris Dauphine–PSL<br>
-              Paris, France
+              Place du Maréchal de Lattre de Tassigny<br>
+              75016 Paris, France
             </address>
-            <div class="profiles">
-              <a href="https://scholar.google.com/citations?user=e1a-ZYMAAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar <span>↗</span></a>
-              <a href="https://www.researchgate.net/profile/Rami-Benabdelkrim" target="_blank" rel="noopener">ResearchGate <span>↗</span></a>
-              <a href="https://www.linkedin.com/in/rami-benabdelkrim/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
-            </div>
+            <ul class="profiles">
+              <li><a href="https://scholar.google.com/citations?user=e1a-ZYMAAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a></li>
+              <li><a href="https://www.researchgate.net/profile/Rami-Benabdelkrim" target="_blank" rel="noopener">ResearchGate</a></li>
+              <li><a href="https://www.linkedin.com/in/rami-benabdelkrim/" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -401,7 +322,7 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Rami Benabdelkrim</span>
-      <a href="#home">Back to top ↑</a>
+      <a class="caps" href="#home">Back to top</a>
     </div>
   </footer>
 
@@ -411,7 +332,7 @@
       btn.addEventListener('click', function () {
         var text = btn.getAttribute('data-copy');
         var done = function () {
-          btn.textContent = 'Copied ✓';
+          btn.textContent = 'Copied';
           setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
         };
         if (navigator.clipboard) {
