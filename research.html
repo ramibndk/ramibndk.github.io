@@ -6,265 +6,16 @@
   <title>Research — Rami Benabdelkrim</title>
   <meta name="description" content="Publications, working papers and works in progress by Rami Benabdelkrim on Extended Producer Responsibility, Producer Responsibility Organizations and public service provision.">
   <meta property="og:title" content="Research — Rami Benabdelkrim">
-  <meta property="og:description" content="Publications, working papers and works in progress on the governance and regulation of the circular economy.">
+  <meta property="og:description" content="Publications, working papers and works in progress by Rami Benabdelkrim on Extended Producer Responsibility, Producer Responsibility Organizations and public service provision.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#1b2433">
+  <link rel="alternate" hreflang="en" href="research.html">
+  <link rel="alternate" hreflang="fr" href="fr/research.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --ink: #1c1c1c;
-      --muted: #6b6760;
-      --rule: #d9d4ca;
-      --paper: #fbfaf7;
-      --navy: #1b2433;
-      --gold: #9c7f52;
-      --display: "Cormorant Garamond", Garamond, Georgia, serif;
-      --text: "EB Garamond", Garamond, Georgia, serif;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--text);
-      font-size: 19px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-    a:hover { color: var(--gold); }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
-
-    .skip { position: absolute; left: -999px; }
-    .skip:focus { left: 16px; top: 16px; background: #fff; padding: 8px 12px; z-index: 100; }
-
-    /* Petites capitales espacées, utilisées pour les libellés */
-    .caps {
-      font-family: var(--text);
-      font-size: 13px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    /* ---------- Barre du haut ---------- */
-    header.top {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(251, 250, 247, 0.94);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--rule);
-    }
-    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-    .wordmark {
-      font-family: var(--display); font-size: 22px; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--navy); text-decoration: none;
-    }
-    .top nav { display: flex; gap: 40px; }
-    .top nav a { color: var(--ink); text-decoration: none; }
-    .top nav a:hover { color: var(--gold); }
-
-    /* ---------- En-tête ---------- */
-    .intro { padding: 120px 0 110px; }
-    .intro .wrap { display: flex; gap: 80px; align-items: flex-end; }
-    .intro .text { flex: 1; }
-    .intro h1 {
-      font-family: var(--display); font-weight: 400;
-      font-size: clamp(52px, 8vw, 92px); line-height: 1;
-      letter-spacing: -0.01em; color: var(--navy); margin: 0;
-    }
-    .intro .rule { width: 72px; height: 1px; background: var(--gold); margin: 40px 0 32px; }
-    .intro .position { margin: 0 0 6px; font-size: 21px; }
-    .intro .position em { color: var(--muted); }
-    .intro .links { margin-top: 44px; display: flex; gap: 36px; flex-wrap: wrap; }
-    .intro .links a { text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; color: var(--navy); }
-    .intro .links a:hover { color: var(--gold); }
-
-    .photo { width: 300px; flex-shrink: 0; margin: 0; }
-    .photo img {
-      width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block;
-      filter: grayscale(100%) contrast(1.05);
-      border: 1px solid var(--rule);
-    }
-
-    /* ---------- Bandeau des logos ---------- */
-    .affiliations { border-top: 1px solid var(--rule); padding: 44px 0; }
-    .affiliations .wrap { display: flex; align-items: center; gap: 64px; flex-wrap: wrap; }
-    .affiliations .caps { color: var(--muted); }
-    .logos { display: flex; align-items: center; gap: 64px; flex-wrap: wrap; }
-    .logos a { display: flex; align-items: center; text-decoration: none; }
-    .logos img {
-      height: 56px; width: auto; max-width: 220px; object-fit: contain;
-      filter: grayscale(100%); opacity: 0.75; transition: filter .3s, opacity .3s;
-    }
-    .logos a:hover img { filter: none; opacity: 1; }
-    .logos .fallback {
-      font-family: var(--display); font-size: 20px; color: var(--navy);
-      letter-spacing: 0.04em; line-height: 1.2;
-    }
-
-    /* ---------- Actualités ---------- */
-    .news { list-style: none; padding: 0; margin: 0; }
-    .news li {
-      display: grid; grid-template-columns: 150px 1fr; gap: 32px;
-      padding: 28px 0; border-top: 1px solid var(--rule);
-    }
-    .news li:last-child { border-bottom: 1px solid var(--rule); }
-    .news time { color: var(--gold); padding-top: 6px; }
-    .news h3 {
-      font-family: var(--display); font-weight: 500; font-size: 25px;
-      line-height: 1.3; margin: 0 0 8px; color: var(--ink);
-    }
-    .news p { margin: 0; color: #3a3833; }
-    .news .more { display: inline-block; margin-top: 10px; }
-
-    /* ---------- Sections ---------- */
-    section.part { border-top: 1px solid var(--rule); padding: 96px 0; }
-    .part .wrap { display: grid; grid-template-columns: 240px 1fr; gap: 64px; }
-    .part .side { color: var(--gold); padding-top: 12px; }
-    h2 {
-      font-family: var(--display); font-weight: 400;
-      font-size: clamp(34px, 4.5vw, 46px); line-height: 1.15;
-      color: var(--navy); margin: 0 0 36px;
-    }
-    .body p { margin: 0 0 22px; }
-    .body p:last-child { margin-bottom: 0; }
-    .body .opening::first-letter {
-      font-family: var(--display); float: left;
-      font-size: 82px; line-height: 0.82; padding: 6px 12px 0 0; color: var(--navy);
-    }
-
-    .fields { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--rule); color: var(--muted); font-style: italic; }
-    .fields span + span::before { content: " · "; color: var(--gold); font-style: normal; }
-
-    /* ---------- Thèse ---------- */
-    .work h3 {
-      font-family: var(--display); font-weight: 500; font-size: 30px;
-      line-height: 1.25; margin: 0 0 10px; color: var(--ink);
-    }
-    .work .meta { color: var(--muted); font-style: italic; margin: 0 0 28px; }
-
-    .chapters { list-style: none; padding: 0; margin: 36px 0; }
-    .chapters li {
-      display: grid; grid-template-columns: 56px 1fr; gap: 8px;
-      padding: 18px 0; border-top: 1px solid var(--rule);
-    }
-    .chapters li:last-child { border-bottom: 1px solid var(--rule); }
-    .chapters .n { font-family: var(--display); font-size: 22px; color: var(--gold); line-height: 1.4; }
-
-    details { margin: 8px 0 36px; }
-    summary {
-      cursor: pointer; list-style: none; display: inline-block;
-      color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 4px;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary .when-open { display: none; }
-    details[open] summary .when-open { display: inline; }
-    details[open] summary .when-closed { display: none; }
-    details .inner { margin-top: 28px; padding-left: 28px; border-left: 1px solid var(--gold); }
-
-    .text-link { text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
-
-    /* ---------- Contact ---------- */
-    .contact-list { list-style: none; padding: 0; margin: 0 0 48px; }
-    .contact-list li {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
-      padding: 20px 0; border-top: 1px solid var(--rule); flex-wrap: wrap;
-    }
-    .contact-list li:last-child { border-bottom: 1px solid var(--rule); }
-    .contact-list .who { color: var(--muted); }
-    .contact-list a { text-decoration: none; word-break: break-all; }
-    .copy {
-      font: inherit; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
-      background: none; border: none; color: var(--gold); cursor: pointer; padding: 0; margin-left: 16px;
-    }
-    .copy:hover { color: var(--navy); }
-
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-    address { font-style: normal; }
-    .profiles { list-style: none; padding: 0; margin: 0; }
-    .profiles li { margin-bottom: 6px; }
-
-    /* ---------- Pied de page ---------- */
-    footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 44px 0; }
-    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
-    footer a:hover { color: var(--gold); }
-
-    /* ---------- Mobile ---------- */
-    @media (max-width: 860px) {
-      .top nav { gap: 22px; }
-      .intro { padding: 64px 0; }
-      .intro .wrap { flex-direction: column-reverse; align-items: flex-start; gap: 48px; }
-      .photo { width: 220px; }
-      section.part { padding: 64px 0; }
-      .part .wrap { grid-template-columns: 1fr; gap: 12px; }
-      .part .side { padding-top: 0; }
-      .two { grid-template-columns: 1fr; gap: 32px; }
-      .affiliations .wrap, .logos { gap: 32px; }
-      .news li { grid-template-columns: 1fr; gap: 4px; }
-      .news time { padding-top: 0; }
-    }
-    @media (max-width: 480px) {
-      .wrap { padding: 0 20px; }
-      body { font-size: 18px; }
-      .wordmark { font-size: 16px; letter-spacing: 0.12em; }
-      .top .wrap { flex-direction: column; justify-content: center; gap: 6px; height: 88px; }
-      .top nav { gap: 18px; }
-      .top nav a { font-size: 11px; letter-spacing: 0.14em; }
-      .logos img { height: 44px; }
-      details .inner { padding-left: 18px; }
-    }
-  
-    /* ---------- Page Research ---------- */
-    .top nav a.active { color: var(--gold); }
-    .page-head { padding: 110px 0 90px; }
-    .page-head h1 {
-      font-family: var(--display); font-weight: 400;
-      font-size: clamp(52px, 8vw, 92px); line-height: 1;
-      color: var(--navy); margin: 0;
-    }
-    .page-head .rule { width: 72px; height: 1px; background: var(--gold); margin: 40px 0 32px; }
-    .page-head p { max-width: 680px; margin: 0; font-size: 21px; color: #3a3833; }
-    .page-head .jump { margin-top: 40px; display: flex; gap: 32px; flex-wrap: wrap; }
-    .page-head .jump a { text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
-
-    .entries { list-style: none; padding: 0; margin: 0; }
-    .entry { padding: 40px 0; border-top: 1px solid var(--rule); }
-    .entry:first-child { border-top: none; padding-top: 0; }
-    .entry:last-child { padding-bottom: 0; }
-    .entry h3 {
-      font-family: var(--display); font-weight: 500; font-size: 28px;
-      line-height: 1.25; margin: 0 0 10px; color: var(--ink);
-    }
-    .entry .meta { color: var(--muted); font-style: italic; margin: 0 0 18px; }
-    .entry .meta .venue { color: var(--navy); }
-    .entry .meta a { color: var(--muted); }
-    .entry .meta a:hover { color: var(--gold); }
-    .entry .summary { margin: 0 0 20px; }
-    .entry .actions { display: flex; gap: 32px; flex-wrap: wrap; align-items: baseline; }
-    .entry details { margin: 0; }
-    .entry details .inner { margin-top: 22px; }
-    .entry details .inner p { margin: 0; }
-
-    .wip { list-style: none; padding: 0; margin: 0; }
-    .wip li { padding: 22px 0; border-top: 1px solid var(--rule); }
-    .wip li:first-child { border-top: none; padding-top: 0; }
-    .wip .t { font-family: var(--display); font-size: 24px; line-height: 1.3; color: var(--ink); display: block; }
-    .wip .w { color: var(--muted); font-style: italic; }
-
-    @media (max-width: 860px) {
-      .page-head { padding: 64px 0 56px; }
-      .entry .actions { flex-direction: column; gap: 16px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body id="home">
   <a class="skip" href="#main">Skip to content</a>
@@ -273,12 +24,19 @@
   <header class="top">
     <div class="wrap">
       <a class="wordmark" href="index.html">Rami Benabdelkrim</a>
-      <nav>
-        <a class="caps" href="index.html#about">About</a>
-        <a class="caps" href="index.html#news">News</a>
-        <a class="caps active" href="research.html">Research</a>
-        <a class="caps" href="index.html#contact">Contact</a>
-      </nav>
+      <div class="right">
+        <nav>
+          <a class="caps" href="index.html#about">About</a>
+          <a class="caps" href="index.html#news">News</a>
+          <a class="caps active" href="research.html" aria-current="page">Research</a>
+          <a class="caps" href="cv.html">CV</a>
+          <a class="caps" href="index.html#contact">Contact</a>
+        </nav>
+        <div class="lang">
+          <span class="caps current" lang="en">EN</span>
+          <a class="caps" href="fr/research.html" lang="fr" hreflang="fr" title="Version française">FR</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -309,46 +67,42 @@
 
             <li class="entry">
               <h3>Understanding Concurrent Sourcing: Implications for the Cost of Public Service Provision</h3>
-              <p class="meta">
-                with <a href="https://sites.google.com/site/jeanbeuve/home" target="_blank" rel="noopener">Jean Beuve</a>
-                and <a href="https://pro.univ-lille.fr/zoe-le-squeren" target="_blank" rel="noopener">Zoé Le Squeren</a>
-                — <span class="venue">Revue d’Économie Politique</span>, 2024
-              </p>
+              <p class="meta">with <a href="https://sites.google.com/site/jeanbeuve/home" target="_blank" rel="noopener">Jean Beuve</a> and <a href="https://pro.univ-lille.fr/zoe-le-squeren" target="_blank" rel="noopener">Zoé Le Squeren</a> — <span class="venue">Revue d’Économie Politique</span>, 134(5), 771–797, 2024</p>
               <div class="actions">
                 <details>
-                  <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
-                  <div class="inner">
-                    <p>Concurrent sourcing in public services arise when identical (or almost identical) transactions are simultaneously produced in-house and contracted out by a same public entity. Based on recent theoretical developments, this paper proposes an empirical investigation of concurrent sourcing in the waste collection sector in France, analyzing both the ex ante motivations (why concurrent sourcing?) and the ex post consequences (what impact on performance?) of such choices by public authorities. Our findings suggest that the choice of concurrent sourcing is mainly based on economic efficiency considerations (scale economies and management of service complexity) without being immune to political considerations. Our results on the ex post consequences of this choice highlight a non-linear effect of this strategy on costs, and shows that the use of concurrent sourcing is an effective way for public authorities to discipline private partners beyond a certain threshold of activity volume.</p>
-                  </div>
-                </details>
+              <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
+              <div class="inner">
+                <p>Concurrent sourcing in public services arise when identical (or almost identical) transactions are simultaneously produced in-house and contracted out by a same public entity. Based on recent theoretical developments, this paper proposes an empirical investigation of concurrent sourcing in the waste collection sector in France, analyzing both the ex ante motivations (why concurrent sourcing?) and the ex post consequences (what impact on performance?) of such choices by public authorities. Our findings suggest that the choice of concurrent sourcing is mainly based on economic efficiency considerations (scale economies and management of service complexity) without being immune to political considerations. Our results on the ex post consequences of this choice highlight a non-linear effect of this strategy on costs, and shows that the use of concurrent sourcing is an effective way for public authorities to discipline private partners beyond a certain threshold of activity volume.</p>
+              </div>
+            </details>
                 <a class="text-link caps" href="https://shs.cairn.info/journal-revue-d-economie-politique-2024-5-page-771?lang=en" target="_blank" rel="noopener">Full text</a>
               </div>
             </li>
 
             <li class="entry">
               <h3>Producer Responsibility Organizations: An Organizational Innovation to Tackle the Waste Challenge</h3>
-              <p class="meta"><span class="venue">Regards croisés sur l’économie</span>, 2024</p>
+              <p class="meta"><span class="venue">Regards croisés sur l’économie</span>, 34(1), 212–221, 2024</p>
               <div class="actions">
                 <details>
-                  <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
-                  <div class="inner">
-                    <p>Within waste management, the implementation of Extended Producer Responsibility (EPR) has given rise to new entities, Producer Responsibility Organizations (PRO), representing a significant organizational innovation. Serving as intermediaries between governmental authorities, producers, and operators, they coordinate and fund waste management programs, thus shifting the burden of waste responsibility onto producers. This denotes a substantial structural transformation, replacing the former model reliant on public funds and municipal responsibility with a privately funded system engaging a broad spectrum of stakeholders. This article aims at underscoring the importance of organizational innovation in a sector where public discourse often emphasizes technological innovation.</p>
-                  </div>
-                </details>
+              <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
+              <div class="inner">
+                <p>Within waste management, the implementation of Extended Producer Responsibility (EPR) has given rise to new entities, Producer Responsibility Organizations (PRO), representing a significant organizational innovation. Serving as intermediaries between governmental authorities, producers, and operators, they coordinate and fund waste management programs, thus shifting the burden of waste responsibility onto producers. This denotes a substantial structural transformation, replacing the former model reliant on public funds and municipal responsibility with a privately funded system engaging a broad spectrum of stakeholders. This article aims at underscoring the importance of organizational innovation in a sector where public discourse often emphasizes technological innovation.</p>
+              </div>
+            </details>
                 <a class="text-link caps" href="https://shs.cairn.info/revue-regards-croises-sur-l-economie-2024-1-page-212?site_lang=fr" target="_blank" rel="noopener">Full text</a>
               </div>
             </li>
 
             <li class="entry">
               <h3>Économie circulaire</h3>
-              <p class="meta">In <span class="venue">Abécédaire de la régulation</span>, Bona Fide</p>
+              <p class="meta">Book chapter in <span class="venue">Abécédaire de la régulation</span>, Bona Fide, 2025</p>
               <div class="actions">
                 <details>
-                  <summary class="caps"><span class="when-closed">Summary</span><span class="when-open">Close</span></summary>
-                  <div class="inner">
-                    <p>My contribution to the Abécédaire de la régulation presents the development of this collective project led by the Governance and Regulation Chair at Université Paris Dauphine–PSL. It retraces its evolution into a European knowledge platform on governance and regulation, designed to make academic insights accessible to a wider audience. The piece highlights the tool’s role in connecting national and European perspectives on regulation and discusses its future challenges — expanding collaboration, enhancing interdisciplinarity, and supporting debates on ecological and digital transitions.</p>
-                  </div>
-                </details>
+              <summary class="caps"><span class="when-closed">Summary</span><span class="when-open">Close</span></summary>
+              <div class="inner">
+                <p>My contribution to the Abécédaire de la régulation presents the development of this collective project led by the Governance and Regulation Chair at Université Paris Dauphine–PSL. It retraces its evolution into a European knowledge platform on governance and regulation, designed to make academic insights accessible to a wider audience. The piece highlights the tool’s role in connecting national and European perspectives on regulation and discusses its future challenges — expanding collaboration, enhancing interdisciplinarity, and supporting debates on ecological and digital transitions.</p>
+              </div>
+            </details>
                 <a class="text-link caps" href="https://www.fnac.com/a21869352/Eric-Brousseau-Abecedaire-de-la-regulation" target="_blank" rel="noopener">The book</a>
               </div>
             </li>
@@ -370,11 +124,11 @@
               <p class="summary">How pooled financing, standardized fees and producer–operator decoupling create informational lock-ins that prevent eco-design incentives within collective EPR systems.</p>
               <div class="actions">
                 <details>
-                  <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
-                  <div class="inner">
-                    <p>Extended Producer Responsibility (EPR) seeks to internalize environmental externalities by assigning producers responsibility for end-of-life management. While individual schemes provide strong incentives, most systems rely on collective arrangements managed by Producer Responsibility Organizations (PROs). This chapter analyzes why PROs structurally fail to generate eco-design incentives: mechanisms like pooled financing, standardized fees, and producer–operator decoupling create informational lock-ins that prevent cost attribution and differentiation. Framed through contract theory and signaling models, we show how these constraints yield a pooling equilibrium and discuss conditions for restoring incentives within collective systems.</p>
-                  </div>
-                </details>
+              <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
+              <div class="inner">
+                <p>Extended Producer Responsibility (EPR) seeks to internalize environmental externalities by assigning producers responsibility for end-of-life management. While individual schemes provide strong incentives, most systems rely on collective arrangements managed by Producer Responsibility Organizations (PROs). This chapter analyzes why PROs structurally fail to generate eco-design incentives: mechanisms like pooled financing, standardized fees, and producer–operator decoupling create informational lock-ins that prevent cost attribution and differentiation. Framed through contract theory and signaling models, we show how these constraints yield a pooling equilibrium and discuss conditions for restoring incentives within collective systems.</p>
+              </div>
+            </details>
                 <a class="text-link caps" href="https://drive.google.com/file/d/1aKZjwZ3jG38x1QIv3jdYTrkQ0G1xMVW0/view" target="_blank" rel="noopener">Working paper (PDF)</a>
               </div>
             </li>
@@ -384,25 +138,25 @@
               <p class="summary">A typology of PROs across 19 European countries — Integrated, Coordinator and Administrative models — and their differentiated environmental outcomes.</p>
               <div class="actions">
                 <details>
-                  <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
-                  <div class="inner">
-                    <p>This chapter examines the organizational diversity of Producer Responsibility Organizations (PROs) in Europe and its implications for the implementation of Extended Producer Responsibility (EPR). Building on organizational economics, it distinguishes between legal responsibility and operational delegation to analyze how institutional and contractual arrangements shape PRO governance. Using data from 19 European countries, a Multiple Correspondence Analysis (MCA) and clustering approach reveal three distinct PRO models—Integrated, Coordinator, and Administrative—that differ in their degree of operational internalization, control over service providers, and independence from producers. These models display differentiated environmental outcomes: Coordinator PROs perform better in collection and recycling, while Integrated PROs achieve higher reuse rates. The chapter contributes to a more precise understanding of how organizational design mediates the effectiveness of collective EPR systems.</p>
-                  </div>
-                </details>
+              <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
+              <div class="inner">
+                <p>This chapter examines the organizational diversity of Producer Responsibility Organizations (PROs) in Europe and its implications for the implementation of Extended Producer Responsibility (EPR). Building on organizational economics, it distinguishes between legal responsibility and operational delegation to analyze how institutional and contractual arrangements shape PRO governance. Using data from 19 European countries, a Multiple Correspondence Analysis (MCA) and clustering approach reveal three distinct PRO models—Integrated, Coordinator, and Administrative—that differ in their degree of operational internalization, control over service providers, and independence from producers. These models display differentiated environmental outcomes: Coordinator PROs perform better in collection and recycling, while Integrated PROs achieve higher reuse rates. The chapter contributes to a more precise understanding of how organizational design mediates the effectiveness of collective EPR systems.</p>
+              </div>
+            </details>
                 <a class="text-link caps" href="https://drive.google.com/file/d/1gRwr2jH0fpNcUL0uY4j9lEEtrmvyaH8w/view?usp=sharing" target="_blank" rel="noopener">Working paper (PDF)</a>
               </div>
             </li>
 
             <li class="entry">
-              <h3>Between Scale and Scope: Institutional Design and Organizational Efficiency in E-Waste Collection</h3>
+              <h3>Between Scale and Scope: Institutional Design and Organizational Efficiency in French E-Waste Collection</h3>
               <p class="summary">Using French departmental panel data (2009–2021), the paper shows that waste-stream diversity reduces collection performance, especially where a single generalist PRO dominates.</p>
               <div class="actions">
                 <details>
-                  <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
-                  <div class="inner">
-                    <p>This paper investigates the organizational efficiency of e-waste collection under Extended Producer Responsibility (EPR) in France. Building on the industrial trade-off between economies of scale and diseconomies of scope, it questions whether generalist Producer Responsibility Organizations (PROs), operating under territorial exclusivity, can efficiently manage heterogeneous waste streams. Using an original panel dataset at the departmental level (2009–2021), we construct a Shannon index to capture waste stream diversity and estimate its impact on collection performance. Results show that greater diversity systematically reduces per capita collection, indicating scope-related inefficiencies that are exacerbated in territories dominated by a single PRO. These findings challenge the regulatory assumption that concentration ensures efficiency and instead support more specialized or differentiated organizational models aligned with industrial realities.</p>
-                  </div>
-                </details>
+              <summary class="caps"><span class="when-closed">Abstract</span><span class="when-open">Close</span></summary>
+              <div class="inner">
+                <p>This paper investigates the organizational efficiency of e-waste collection under Extended Producer Responsibility (EPR) in France. Building on the industrial trade-off between economies of scale and diseconomies of scope, it questions whether generalist Producer Responsibility Organizations (PROs), operating under territorial exclusivity, can efficiently manage heterogeneous waste streams. Using an original panel dataset at the departmental level (2009–2021), we construct a Shannon index to capture waste stream diversity and estimate its impact on collection performance. Results show that greater diversity systematically reduces per capita collection, indicating scope-related inefficiencies that are exacerbated in territories dominated by a single PRO. These findings challenge the regulatory assumption that concentration ensures efficiency and instead support more specialized or differentiated organizational models aligned with industrial realities.</p>
+              </div>
+            </details>
                 <a class="text-link caps" href="https://drive.google.com/file/d/1bfUW48WNLPE6ZjMX6cqfPxwLVQTDNhrR/view" target="_blank" rel="noopener">Working paper (PDF)</a>
               </div>
             </li>
@@ -427,7 +181,7 @@
               <span class="w">with Lucas Eustache and Surjasama Lahiri</span>
             </li>
             <li>
-              <span class="t">Understanding Lobbying Dynamics Through Public Consultations: The Case of PROs Specification Design</span>
+              <span class="t">Open vs. Closed Consultation Impact on Decision Making: Evidence from Producer Responsibility Organizations in France</span>
               <span class="w">with Edgar Jimenez Bedolla</span>
             </li>
             <li>
@@ -439,14 +193,17 @@
       </div>
     </section>
 
-    <!-- ========== THÈSE (rappel) ========== -->
-    <section class="part" id="dissertation">
+    <!-- ========== DISSERTATION ========== -->
+    <section class="part">
       <div class="wrap">
         <div class="side caps">Ph.D. Dissertation</div>
         <div class="body work">
-          <h3>Producer Responsibility Organizations and the implementation of Extended Producer Responsibility in Europe</h3>
-          <p class="meta">Doctoral thesis, Université Paris Dauphine–PSL</p>
-          <p><a class="text-link caps" href="index.html#dissertation">Overview</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-link caps" href="https://theses.hal.science/tel-05180874v1" target="_blank" rel="noopener">Read on HAL</a></p>
+          <h3>Organizational Challenges of Extended Producer Responsibility: An Analysis of Producer Responsibility Organizations</h3>
+          <p class="meta">Ph.D. in Management, Université Paris Dauphine–PSL, 2025</p>
+          <p class="cv-actions">
+            <a class="text-link caps" href="index.html#dissertation">Overview</a>
+            <a class="text-link caps other" href="https://theses.hal.science/tel-05180874v1" target="_blank" rel="noopener">Read on HAL</a>
+          </p>
         </div>
       </div>
     </section>
@@ -460,5 +217,7 @@
       <a class="caps" href="#home">Back to top</a>
     </div>
   </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
